@@ -7,6 +7,7 @@
     <link rel="icon" href="assets/img/raiblocks.png" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+
     <meta name="author" content="Leandro Castro" />
     <meta name="description" CONTENT="Cotação XRB para BRL em tempo real">
     <meta name="keywords" content="cotacao, xrb, raiblocks, real, brasil, brl, preco, quanto custa">
@@ -98,7 +99,11 @@
             </div>
             <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
               <div class="box">
-                <h2>1 XRB = R$ 1000,00</h2>
+
+                <span ng-show="carregando">
+                  <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                </span>
+                <h2 ng-show="!carregando">1 XRB = R$ {{valor_cotacao | number: 2}}</h2>
               </div>
               <div class="share-box">
                 <a href="#"
