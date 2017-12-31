@@ -19,6 +19,7 @@ app.controller('cotacaoCtrl', ['$scope', '$http', 'Socialshare', function($scope
         var cotacao_bitcoin = response_fox.data.ticker.last;
         //console.log();
         $scope.valor_cotacao = cotacao_bitcoin*cotacao_xrb;
+        $scope.valor_cotacao = $scope.valor_cotacao.toFixed(2);
         $scope.carregando = false;
       })
     });
