@@ -1,4 +1,4 @@
-var app = angular.module('cotacaoApp',['720kb.socialshare', 'ui.utils.masks']);
+var app = angular.module('cotacaoApp',['720kb.socialshare', 'ngMask']);
 
 app.controller('cotacaoCtrl', ['$scope', '$http', 'Socialshare', function($scope, $http, Socialshare) {
   var api_bitgrail = "https://bitgrail.com/api/v1/markets";
@@ -33,9 +33,77 @@ app.controller('cotacaoCtrl', ['$scope', '$http', 'Socialshare', function($scope
 
   $scope.setAmount = function(){
     $scope.amount_xrb = $scope.value_total/$scope.valor_cotacao;
+    //$scope.amount_xrb = $scope.amount_xrb.toFixed(6);
+    //console.log($scope.amount_xrb)
   }
   $scope.setTotal = function(){
     $scope.value_total = $scope.amount_xrb*$scope.valor_cotacao;
+    //$scope.value_total.toFixed(2);
   }
 
 }]);
+
+
+
+app.directive("numberFormat", function ($filter) {
+	return {
+		require: "ngModel",
+		link: function (scope, element, attrs, ctrl) {
+			var _formatNumber = function (number) {
+        var novo_numero = number.toString();
+        novo_numero = novo_numero.replace(",", ".");
+        return novo_numero;
+			};
+
+			element.bind("keyup", function () {
+				ctrl.$setViewValue(_formatNumber(ctrl.$viewValue));
+				ctrl.$render();
+			});
+      /*
+			ctrl.$parsers.push(function (value) {
+				if (value.length === 10) {
+					var dateArray = value.split("/");
+					return new Date(dateArray[2], dateArray[1]-1, dateArray[0]).getTime();
+				}
+			});
+      */
+      /*
+			ctrl.$formatters.push(function (value) {
+				return $filter("date")(value, "dd/MM/yyyy");
+			});
+      */
+		}
+	};
+});
+
+app.directive("moneyFormat", function ($filter) {
+	return {
+		require: "ngModel",
+		link: function (scope, element, attrs, ctrl) {
+			var _formatNumber = function (number) {
+        var novo_numero = number.toString();
+        novo_numero = novo_numero.replace(",", ".");
+        novo_numero.toFixed(2);
+        return novo_numero;
+			};
+
+			element.bind("keyup", function () {
+				ctrl.$setViewValue(_formatNumber(ctrl.$viewValue));
+				ctrl.$render();
+			});
+      /*
+			ctrl.$parsers.push(function (value) {
+				if (value.length === 10) {
+					var dateArray = value.split("/");
+					return new Date(dateArray[2], dateArray[1]-1, dateArray[0]).getTime();
+				}
+			});
+      */
+      /*
+			ctrl.$formatters.push(function (value) {
+				return $filter("date")(value, "dd/MM/yyyy");
+			});
+      */
+		}
+	};
+});

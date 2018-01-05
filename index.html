@@ -61,7 +61,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
-    <script src="node_modules/angular-input-masks/releases/angular-input-masks-standalone.js"></script>
+    <script src="assets/mask/mask.min.js"></script>
     <script src="assets/angular-socialshare-master/dist/angular-socialshare.min.js"></script>
     <script src="assets/js/javascript.js"></script>
 
@@ -121,7 +121,7 @@
                   <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-5 com-xs-12">
                       <div class="input-group">
-                        <input type="text" ng-model="amount_xrb" class="form-control" ng-change="setTotal()" ui-number-mask="6" ui-hide-group-sep>
+                        <input type="text" id="amount" ng-model="amount_xrb" class="form-control" ng-change="setTotal()" number-format>
                         <span class="input-group-addon">XRB</span>
                       </div>
                     </div>
@@ -131,7 +131,7 @@
                     <div class="col-lg-5 col-md-5 col-sm-5 com-xs-12">
                       <div class="input-group">
                         <span class="input-group-addon">BRL</span>
-                        <input type="text"  ng-model="value_total" class="form-control" ng-change="setAmount()" ui-number-mask="2" ui-hide-group-sep>
+                        <input type="number" step='0.01'  ng-model="value_total" class="form-control" ng-change="setAmount()" money-format>
                       </div>
                     </div>
                   </div>
@@ -226,6 +226,7 @@
         </div>
       </div>
     </div>
+
 
   </body>
 </html>
