@@ -135,6 +135,29 @@ body{
         text-transform: uppercase;
         font-size: 55px;
         color: @bg;
+        &.equal{
+          margin-top: -10px;
+        }
+      }
+      p{
+        text-align: center;
+        color: @bg;
+        font-size: 10px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+      }
+      .input-group{
+        input{
+          border-color: @bg;
+          //background-color: @orange;
+          &:focus{
+            //box-sh
+          }
+        }
+        span{
+          background-color: @bg;
+          border-color: @bg;
+        }
       }
     }
     .share-box{
@@ -170,6 +193,16 @@ body{
       }
     }
   }
+}
+
+
+@media screen and(max-width: 776px){
+  h2{
+    &.equal{
+      margin-top: 0px !important;
+    }
+  }
+
 }
 
 @media screen and(max-width: 550px){

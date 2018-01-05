@@ -1,0 +1,24 @@
+{
+  "name": "cotacaoxrb.github.io",
+  "version": "1.1.0",
+  "description": "Conversor de XRB para BRL",
+  "main": "index.js",
+  "dependencies": {
+    "angular-input-masks": "^4.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cotacaoxrb/cotacaoxrb.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cotacaoxrb/cotacaoxrb.github.io/issues"
+  },
+  "homepage": "https://github.com/cotacaoxrb/cotacaoxrb.github.io#readme"
+}
