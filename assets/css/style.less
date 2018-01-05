@@ -22,10 +22,24 @@ html, body {
   min-height: 100%;
 }
 
+@media screen and(max-width: 767px){
+  html, body{
+    height: auto;
+    min-height: auto;
+  }
+}
+
 body{
   background-color: @bg;
   font-family: 'Poppins', sans-serif;
   color: @default;
+}
+
+@media screen and(max-width: 767px){
+  #main-menu{
+    position: static;
+    margin-bottom: 40px !important;
+  }
 }
 
 #main-menu{
@@ -100,8 +114,20 @@ body{
 }
 
 
-
+@media screen and(min-width: 768px){
+  .wrapper {
+    height: 100%;
+    min-height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
 .wrapper {
+  /*
   height: 100%;
   min-height: 100%;
   display: -webkit-flex;
@@ -110,6 +136,7 @@ body{
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
+  */
   .cotacao-box{
     .title{
       text-align: center;
@@ -226,8 +253,7 @@ body{
 footer{
   background-color: @orange;
   width: 100%;
-  position: fixed;
-  bottom: 0px;
+
   padding: 20px 0px;
   p{
     margin: 0px;
@@ -236,9 +262,17 @@ footer{
   }
 }
 
+@media screen and(min-width: 768px){
+  footer{
+    position: fixed;
+    bottom: 0px;
+  }
+}
+
 @media screen and(max-width: 767px){
   footer{
     padding: 10px 0px;
+    margin-top: 40px;
     p{
       font-size: 12px;
     }
