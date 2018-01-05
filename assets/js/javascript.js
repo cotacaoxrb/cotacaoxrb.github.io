@@ -83,7 +83,6 @@ app.directive("moneyFormat", function ($filter) {
 			var _formatNumber = function (number) {
         var novo_numero = number.toString();
         novo_numero = novo_numero.replace(",", ".");
-        novo_numero.toFixed(2);
         return novo_numero;
 			};
 
