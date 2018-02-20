@@ -3,7 +3,7 @@ var app = angular.module('cotacaoApp',['720kb.socialshare', 'ngMask']);
 app.controller('cotacaoCtrl', ['$scope', '$http', 'Socialshare', function($scope, $http, Socialshare) {
   var api_bitgrail = "https://bitgrail.com/api/v1/markets";
   var api_mercatox = "https://mercatox.com/public/json24";
-  var api_coinmarket = "https://api.coinmarketcap.com/v1/ticker/raiblocks/";
+  var api_coinmarket = "https://api.coinmarketcap.com/v1/ticker/nano/";
   //var api_foxbit = "http://api.blinktrade.com/api/v1/BRL/ticker?crypto_currency=BTC";
   $scope.valor_cotacao = 0;
   $scope.carregando = true;
